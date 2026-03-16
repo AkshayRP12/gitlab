@@ -73,20 +73,25 @@ program 3
 -------------------------------------------------------------------
 
 sudo apt install openjdk-21-jdk -y
+ls
+[ if jenkins spotted, ]
+sudo rm jenkins.war
+sudo rm ~rf ~\.jenkins
+
+
 wget https://get.jenkins.io/war-stable/latest/jenkins.war
-java -jar jenkins.war --httpPort=8080
+java -jar jenkins.war --httpPort=8099
 
-sudo apt install snapd
-sudo snap install ngrok
-ngrok http 8080
+open local host using the port
+install suggested plugins
 
 
-script.sh
-#!/bin/bash
-echo "hello world!"
-echo "Jenkins runed successfully!"
 
-Jenkinsfile
+
+
+
+
+new file in github Jenkinsfile
 
 pipeline {
     agent any
@@ -109,4 +114,35 @@ pipeline {
     }
 }
 
+
+another file script.sh
+#!/bin/bash
+echo "hello world!"
+echo "Jenkins runed successfully!"
+
+Jenkins Job Configuration:
+Create New Jenkins Job:
+1. Open Jenkins Dashboard
+2. Click New Item
+3. Enter Job name: Akash
+h
+Select Pipeline
+5. Click ok
+Configure Pipeline:
+1
+Go to pipeline section → Triggers
+2. Select Definition as Pipeline Script frem SCM.
+3.
+Choose SCM-> Git
+4. Paste the GitHub repo URL
+5.
+Change branch name to main
+6. Click Save
+
+
+
+
+sudo apt install snapd -y
+sudo snap install ngrok
+ngrok http 8080
 -----------------------------------------------------------------------------
